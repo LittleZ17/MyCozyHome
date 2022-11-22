@@ -11,7 +11,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <title>My Cozy Home</title>
+    <title>Cart</title>
   </head>
   <body>
     <header>
@@ -28,10 +28,11 @@
     </nav>
 
     <main>
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <img src="assets/img/product01.png" class="card-img-top" alt="Lamp" />
         <div class="card-body">
           <h5 class="card-title">Modern Lamp</h5>
+          <button><img src="assets/icons/cancel.svg" alt="" /></button>
           <p class="card-text">50.00 €</p>
           <div>
             <button><img src="assets/icons/buttonMinus.svg" alt="" /></button>
@@ -40,6 +41,27 @@
           </div>
           <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
         </div>
+      </div>
+      <hr />
+      <div class="card">
+        <img src="assets/img/product02.png" class="card-img-top" alt="Lamp" />
+        <div class="card-body">
+          <h5 class="card-title">Coffee Chair</h5>
+          <button><img src="assets/icons/cancel.svg" alt="" /></button>
+          <p class="card-text">20.00 €</p>
+          <div>
+            <button><img src="assets/icons/buttonMinus.svg" alt="" /></button>
+            <input type="number" />
+            <button><img src="assets/icons/buttonAdd.svg" alt="" /></button>
+          </div>
+          <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h5>Total:</h5>
+        <p class="card-text">70.00 €</p>
+        <button>Submit order</button>
       </div>
     </main>
     <script src="js/index.js"></script>

@@ -31,10 +31,10 @@
 
     <main>
       <div class="card" style="width: 18rem">
-        <img src="assets/img/product01.png" class="card-img-top" alt="Lamp" />
+        <img src= "{{product.image}}" class="card-img-top" alt="Lamp" />
         <div class="card-body">
-          <h5 class="card-title">Modern Lamp</h5>
-          <p class="card-text">50.00 €</p>
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.price}} €</p>
           <div>
             <button><img src="assets/icons/buttonMinus.svg" alt="" /></button>
             <input type="number" />
@@ -45,5 +45,6 @@
       </div>
     </main>
     <script src="js/index.js"></script>
+    <script src="./products.js"></script>
   </body>
 </html>

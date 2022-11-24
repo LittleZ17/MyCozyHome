@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+
     <title>My Cozy Home</title>
   </head>
   <body>
@@ -29,23 +24,8 @@
       <a href="#"><img src="assets/icons/profile.svg" alt="User" />Profile</a>
     </nav>
 
-    <main>
-      <div class="card" style="width: 18rem">
-        <img src= "{{product.image}}" class="card-img-top" alt="Lamp" />
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">{{product.price}} €</p>
-          <div>
-            <button><img src="assets/icons/buttonMinus.svg" alt="" /></button>
-            <input type="number" />
-            <button><img src="assets/icons/buttonAdd.svg" alt="" /></button>
-          </div>
-          <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
-        </div>
-        <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
-      </div>
-    </main>
+    <main id="cards"></main>
+    <script src="js/products.js"></script>
     <script src="js/index.js"></script>
-    <script src="./products.js"></script>
   </body>
 </html>

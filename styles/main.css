@@ -6,9 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.listProducts h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.listProducts h3 strong{
+    font-weight: 900;
 }
 .products {
-    width: 100%;
+    width: 80%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -69,3 +77,27 @@
     margin: 0 1rem;
 }
 
+@media only screen and (min-width: 992px) {
+    .listProducts h3{
+      display: none;
+    }
+    .products {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+    .products .item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .imgProduct img {
+        width: 30vh;
+        border-radius: 30px 30px 0 0;
+    }
+
+}

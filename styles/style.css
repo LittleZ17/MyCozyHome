@@ -1,33 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
-@import url("header.css"); 
-@import url("main.css"); 
-@import url("nav.css"); 
-*{
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    vertical-align: baseline;
-    
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("header.css");
+@import url("main.css");
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
 }
- :root{
-    --color-black: #19191b;
-    --color-brown: #8f8371;
-    --color-green: #8aa328;
-    --color-yellow: #ffce89;
-    --color-white: #FFFFFF;
+:root {
+  --color-black: #19191b;
+  --color-brown: #8f8371;
+  --color-green: #8aa328;
+  --color-yellow: #ffce89;
+  --color-white: #ffffff;
 
-    --font:'Cabin', sans-serif;
+  --font: "Lato", sans-serif;
 }
-html{
-    scroll-behavior: smooth;
-    font-size: 62.5%;
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 .container {
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-areas:
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
     "header"
     "main"
     "main"
@@ -35,17 +33,15 @@ html{
     "footerSlogan";
 }
 .container .logo {
-    grid-area: header;
+  grid-area: header;
 }
 .container .listProducts {
-    grid-area: main;
+  grid-area: main;
 }
 .container .footerSlogan {
-    grid-area: footerSlogan;
+  grid-area: footerSlogan;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 /* Recordar usar rem para los font-size ej: 36px == 3.6rem */
-
-

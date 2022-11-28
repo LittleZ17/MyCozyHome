@@ -9,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     vertical-align: baseline;
+    
 }
  :root{
     --color-blue: #4982DF;
@@ -27,8 +28,31 @@ html{
 body {
     width: 100%;
     min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+    "header header nav nav"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "main main main main";
+
+   
 }
 a{
     text-decoration: none;
 }
 /* Recordar usar rem para los font-size ej: 36px == 3.6rem */
+
+media only screen and (max-width: 600px){
+    body{
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "main main"
+        "main main"
+        "main main"
+        "main main"
+        "nav nav";
+    
+    }
+    

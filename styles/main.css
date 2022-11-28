@@ -1,38 +1,71 @@
+* {
+    font-family: var(--font);
+}
+
 .listProducts{
-    width: 100%;
-    height: 100vh;
-  
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .products {
     width: 100%;
-
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+    align-items: center;
+    justify-content: center;
+}
 .products .item{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-}
-/* .products .imgProduct{
+    margin-top: 5%;
+    box-shadow: 0.3em 0.3em 3em rgba(187, 187, 187, 0.4);
     border-radius: 30px;
-} */
-
+}
 .imgProduct img {
-    width: 100%;
-    border-radius: 10px;
+    width: 42vh;
+    border-radius: 30px 30px 0 0;
 }
 
 .item .infoProduct{
-    margin-top: 1rem;
-    display: ;
+    width: 100%;
+    margin: 5%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+.infoProduct img {
+    width: 40px;
+}
+.infoProduct div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.infoProduct div h5 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--color-black);
+}
+.infoProduct .cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.cantidad button {
+    background-color: white;
+}
+.infoProduct div h6 {
+    font-size: 2rem;
+    color: var(--color-brown);
+    margin: 0 1rem;
+}
+
+.infoProduct div p {
+    font-size: 2.4rem;
+    color: var(--color-green);
+    margin: 0 1rem;
 }
 

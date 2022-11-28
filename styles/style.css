@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=Nunito+Sans:wght@400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 @import url("header.css"); 
 @import url("main.css"); 
 @import url("nav.css"); 
@@ -12,14 +11,14 @@
     
 }
  :root{
-    --color-blue: #4982DF;
-    --color-black: #303030;
-    --color-greyMiddle: #BDBDBD;
-    --color-greySoft: #F0F0F0;
+    --color-black: #19191b;
+    --color-brown: #8f8371;
+    --color-green: #8aa328;
+    --color-yellow: #ffce89;
     --color-white: #FFFFFF;
 
-    --fontGelasio: 'Gelasio', serif;
-    --fontNunito: 'Nunito Sans', sans-serif;
+    --fontGelasio:'Cabin', sans-serif;
+    ;
 }
 html{
     scroll-behavior: smooth;

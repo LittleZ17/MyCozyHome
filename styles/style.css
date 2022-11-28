@@ -21,9 +21,13 @@ html {
   scroll-behavior: smooth;
   font-size: 62.5%;
 }
-.container {
+
+body {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+}
+
+.container {
   display: grid;
   grid-template-areas:
     "header"

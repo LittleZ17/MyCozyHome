@@ -6,9 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.listProducts h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.listProducts h3 strong{
+    font-weight: 900;
 }
 .products {
-    width: 100%;
+    width: 80%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -52,7 +60,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 .cantidad button {
     background-color: white;
@@ -69,3 +76,41 @@
     margin: 0 1rem;
 }
 
+@media only screen and (min-width: 992px) {
+    .listProducts h3{
+      display: none;
+    }
+    .products {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6rem;
+    }
+    .products .item{
+        margin-top: 0;
+    }
+    .imgProduct img {
+        background-color: rgb(143, 131, 113, 0.2);
+        width: 25vh;
+    }
+    .infoProduct img {
+        width: 2.8vh;
+    }
+    .infoProduct div {
+        margin-top: 0.5rem;
+    }
+
+    .infoProduct div h5 {
+        font-size: 1.8rem;
+    }
+    .infoProduct div h6 {
+        font-size: 1.5rem;
+    }
+    .infoProduct div p {
+        font-size: 2rem;
+    }
+
+
+}

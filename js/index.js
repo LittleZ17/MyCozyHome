@@ -28,12 +28,19 @@ function printProducts(productsArray) {
 
 printProducts(productsArray);
 
-// menu hamburgesa-----------------------------
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.querySelector("header nav");
+// menu hamburger----------------------------
+const menuBtn = document.querySelector(".menuBtn");
+const nav = document.querySelector(".navMenu");
 const body = document.querySelector("body");
-menuBtn.addEventListener("click", (event) => {
-  menuBtn.classList.toggle("salir");
-  nav.classList.toggle("visible");
-  body.classList.toggle("no-scroll");
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("menuBtnVisible");
+  nav.classList.toggle("navMenuVisible");
+  body.classList.toggle("no-scroll"); //para que no haga scroll el body cuando el menu este desplegado
 });
+
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    menuBtn.classList.remove("menuBtnVisible");
+    nav.classList.remove("navMenuVisible");
+  })
+);

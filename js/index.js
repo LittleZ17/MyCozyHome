@@ -14,11 +14,11 @@ function printProducts(productsArray) {
           </div>
           <div>
             <div class="cantidad">
-              <button><img src="assets/icons/buttonMinus.svg" alt="" /></button>
+              <button><img src="assets/icons/buttonMinus.svg" alt="More product" /></button>
               <h6>01</h6>
-              <button><img src="assets/icons/buttonAdd.svg" alt="" /></button>
+              <button><img src="assets/icons/buttonAdd.svg" alt="Less product" /></button>
             </div>
-            <p>${item.price} €</p>
+            <p>${item.price.toFixed(2)} €</p>
           </div>
         </div>
       </div>

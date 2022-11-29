@@ -8,11 +8,11 @@ function printProducts(productsArray) {
             <img src= "${item.image}" class="card-img-top" alt="${item.name}" />
           </div>
         <div class="infoProduct">
-          <div>
+          <div class="row1">
             <h5>${item.name}</h5>
             <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
           </div>
-          <div>
+          <div class="row2">
             <div class="cantidad">
               <button><img src="assets/icons/buttonMinus.svg" alt="More product" /></button>
               <h6>01</h6>

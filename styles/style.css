@@ -14,7 +14,7 @@
   --color-green: #8aa328;
   --color-yellow: #ffce89;
   --color-white: #ffffff;
-  --color-background:#A9A69B;
+  --color-background: #a9a69b;
 
   --font: "Lato", sans-serif;
 }
@@ -35,10 +35,9 @@ body {
     "slogan"
     "main"
     "main"
-    "main"
-   ;
+    "main";
 }
-.container .logo {
+header {
   grid-area: header;
 }
 .container .listProducts {
@@ -51,7 +50,7 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 992px){
+@media only screen and (min-width: 992px) {
   .container {
     display: grid;
     grid-template-areas:
@@ -59,10 +58,9 @@ a {
       "main"
       "main"
       "main"
-      "slogan"
-     ;
+      "slogan";
   }
-  .container .logo {
+  header {
     grid-area: header;
   }
   .container .listProducts {

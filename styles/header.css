@@ -70,6 +70,7 @@ header nav {
   }
   header h1 {
     font-size: 3rem;
+    cursor: pointer;
   }
 
   .bold {
@@ -93,17 +94,19 @@ header nav {
 
   .navMenu a img {
     display: flex;
+    padding-right: 15%;
   }
 
   .navMenu a {
     font-size: 1.9rem;
-    padding: 7%;
+    margin: 0 0 0 40%;
+    padding: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
   }
   .navMenu a:hover {
-    color: var(--color-brown);
-  }
-  .navMenu a:active {
     color: var(--color-green);
   }
 }

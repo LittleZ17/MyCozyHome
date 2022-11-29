@@ -59,3 +59,51 @@ header nav {
 .no-scroll {
   position: fixed;
 }
+
+@media only screen and (min-width: 992px) {
+  header {
+    align-items: center;
+  }
+
+  header nav {
+    padding-top: 0;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .bold {
+    font-size: 3.9rem;
+  }
+  .menuBtn,
+  .menuBtnVisible {
+    display: none;
+  }
+  .navMenu {
+    position: unset;
+    transition: none;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navMenu a img {
+    display: flex;
+  }
+
+  .navMenu a {
+    font-size: 1.9rem;
+    padding: 7%;
+    cursor: pointer;
+  }
+  .navMenu a:hover {
+    color: var(--color-brown);
+  }
+  .navMenu a:active {
+    color: var(--color-green);
+  }
+}

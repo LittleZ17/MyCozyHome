@@ -8,33 +8,42 @@
     <title>Cart</title>
   </head>
   <body>
-    <header>
-      <h1>
-        MyCozy <strong>Home</strong> 
-      </h1>
-      <button>
-        <img src="assets/icons/hamburger.svg" alt="">
-      </button>
-    </header>
+    <header class="logo">
+      <div class="logoText">
+        <h1>MyCozy</h1>
+        <h1 class="bold">Home</h1>
+      </div>
 
-    <nav>
-      <a href="index.html"><img src="assets/icons/home.svg" alt="home" />Home</a>
-      <a href="cart.html"><img src="assets/icons/cart.svg" alt="cart" />Cart</a>
-      <a href="#"><img src="assets/icons/profile.svg" alt="User" />Profile</a>
-    </nav>
+      <nav>
+        <button class="menuBtn">
+          <img src="assets/icons/hamburger.svg" alt="Menu button" />
+        </button>
+        <div class="navMenu">
+          <a href="index.html"
+            ><img src="assets/icons/home.svg" alt="home" />Home</a
+          >
+          <a href="cart.html"
+            ><img src="assets/icons/cart.svg" alt="cart" />Cart</a
+          >
+          <a href="#"
+            ><img src="assets/icons/profile.svg" alt="User" />Profile</a
+          >
+        </div>
+      </nav>
+    </header>
 
     <main>
       <h2>My Cart</h2>
-      <div></div>         
+      <div></div>
       <div>
         <h6>Total</h6>
         <h5>234.00 €</h5>
         <button>Buy now</button>
       </div>
     </main>
-  <footer>
-    <p>My <strong>shooping cart</strong>of style</p>
-  </footer>
+    <footer>
+      <p>My <strong>shooping cart</strong>of style</p>
+    </footer>
 
     <script src="js/products.js"></script>
     <script src="js/index.js"></script>

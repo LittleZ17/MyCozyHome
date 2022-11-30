@@ -1,123 +1,127 @@
-* {
-    font-family: var(--font);
-}
-
-.slogan{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0;
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6% 0 3% 0;
 }
 .slogan p {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
-.slogan p strong{
-    font-weight: 900;
+.slogan p strong {
+  font-weight: 900;
 }
-.listProducts{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.listProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.products .item{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 5%;
-    box-shadow: 0.3em 0.3em 3em rgba(187, 187, 187, 0.4);
-    border-radius: 30px;
+.products .item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5%;
+  box-shadow: 0.3em 0.3em 3em rgba(187, 187, 187, 0.4);
+  border-radius: 30px;
 }
 .imgProduct img {
-    width: 40vh;
-    border-radius: 30px 30px 0 0;
-    background-color: var(--color-background);
+  width: 40vh;
+  border-radius: 30px 30px 0 0;
+  background-color: var(--color-background);
 }
 
-.item .infoProduct{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 6% 9%;
+.item .infoProduct {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 6% 9%;
 }
-.row1, .row2{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.row1,
+.row2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.infoProduct .row1 img{
-    width: 100%;
+.infoProduct .row1 img {
+  width: 100%;
 }
-.infoProduct .row2{
-    margin-top: 3%;
+.infoProduct .row2 {
+  margin-top: 3%;
 }
 .infoProduct .row2 img {
-    width: 100%;
+  width: 100%;
 }
 .infoProduct .row1 h5 {
-    font-size: 2.1rem;
-    font-weight: 400;
-    color: var(--color-black);
-    align-self: flex-start;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--color-black);
+  align-self: flex-start;
 }
 .infoProduct .cantidad {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cantidad button {
-    background-color: white;
+  background-color: white;
 }
 .infoProduct .row2 h6 {
-    font-size: 2rem;
-    color: var(--color-brown);
-    margin: 0 1rem;
+  font-size: 2rem;
+  color: var(--color-brown);
+  margin: 0 1rem;
 }
 
 .infoProduct .row2 p {
-    font-size: 2.4rem;
-    color: var(--color-green);
+  font-size: 2.4rem;
+  color: var(--color-green);
 }
 
 @media only screen and (min-width: 992px) {
-    .slogan p{
-        font-size: 2.4rem;
-    }
-    .products {
-        width: 100%;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 4rem;
-        padding: 0 5%;
-    }
+  .listProducts {
+    margin: 2% 0;
+  }
+  .slogan {
+    padding: 2% 0px;
+    box-shadow: 0px 1px 9px 2px rgba(0, 0, 0, 0.1);
+  }
+  .slogan p {
+    font-size: 2.4rem;
+  }
+  .products {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    padding: 0 5%;
+  }
 
-    .imgProduct img {
-        width: 100%;
-    }
-    .infoProduct img {
-        width: 100%;
-    }
-    .infoProduct div {
-        margin-top: 0.5rem;
-    }
+  .imgProduct img {
+    width: 100%;
+  }
+  .infoProduct img {
+    width: 100%;
+  }
+  .infoProduct div {
+    margin-top: 0.5rem;
+  }
 
-    .infoProduct .row1 h5 {
-        font-size: 1.8rem;
-    }
-    .infoProduct .cantidad{
-        align-self: center;
-    }
-    .infoProduct .row2 h6 {
-        font-size: 2.1rem;
-        font-weight: 400;
-    }
-    .infoProduct .row2 p {
-        font-size: 2rem;
-        padding-top: 6%;
-    }
+  .infoProduct .row1 h5 {
+    font-size: 1.8rem;
+  }
+  .infoProduct .cantidad {
+    align-self: center;
+  }
+  .infoProduct .row2 h6 {
+    font-size: 2.1rem;
+    font-weight: 400;
+  }
+  .infoProduct .row2 p {
+    font-size: 2rem;
+    padding-top: 6%;
+  }
 }

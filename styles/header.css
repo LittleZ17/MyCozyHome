@@ -91,7 +91,7 @@ header nav {
     text-align: center;
     align-content: center;
     justify-content: flex-end;
-    align-items: center;
+    align-items: baseline;
   }
 
   .navMenu a img {

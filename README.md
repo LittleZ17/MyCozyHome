@@ -1,10 +1,48 @@
-# MyCozyHome
+<h1 alaign ="center"> MyCozyHome </h1>
 
-## Descripción
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Technologies](#technologies)
+4. [Tools](#tools)
 
-MyCozyHome es una web de venta de mobiliario moderno, la página  es intuitiva, con los items visibles y descripciones de productos, el usuario puede seleccionar los productos y la cantidad y enviarlo al carro en un clik. En el carro el usuario puede editar la cantidad de productos y ver la cantidad final que tendra que pagar, tamien puede resetear el carro y dejarlo a 0.  La web esta diseñada y pensad para que el usuario tenga una buena experiencia de navegación. 
 
-## Instalación
+
+
+## Description
+
+<p class = "description">MyCozy <strong>Home</strong> is a website selling antique furniture.The page is intuitive. Items are visible and product descriptions are detailed.The user can select the desired products and quantity to send to the cart easily and intuitively. In the cart the user can edit the number of products and see the final amount they will have to pay. They can also reset the cart and leave it at 0. The website is designed and considered so that the user has a good browsing experience.
+
+## Installation
+
+<p class ="installation">Accessible from PC and mobile, compatible with all browsers.</p>
+
+
+
+## Technologies
+
+
+<img src= "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt = "html"></img>
+<img src= "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt = "css"></img>
+<img src= "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt= "javascript"></img>
+
+## Tools
+
+<ul>
+   <li>Figma</li>
+   <li>Visual Studio Code</li>
+   <li>Trello</li>
+   <li>Git/GitHub</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
 
 
 

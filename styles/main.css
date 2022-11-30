@@ -8,32 +8,20 @@
     justify-content: center;
     margin: 1rem 0;
 }
-
 .slogan p {
     font-size: 1.8rem;
 }
 .slogan p strong{
     font-weight: 900;
 }
-/* .listProducts, .products, .item, .cantidad{
-    align-items: center;
-    justify-content: center;
-} */
 .listProducts{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-/* .products {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-} */
 .products .item{
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     flex-direction: column;
     width: 100%;
     margin-top: 5%;
@@ -52,26 +40,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 1rem 0;
+    padding: 6% 9%;
 }
 .row1, .row2{
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 .infoProduct .row1 img{
-    width: 30px;
-}
-.infoProduct img {
-    width: 20px;
-}
-.infoProduct > div {
-    display: flex;
-    align-items: center;
     width: 100%;
 }
-.infoProduct div h5 {
-    font-size: 2.4rem;
+.infoProduct .row2{
+    margin-top: 3%;
+}
+.infoProduct .row2 img {
+    width: 100%;
+}
+.infoProduct .row1 h5 {
+    font-size: 2.1rem;
     font-weight: 400;
     color: var(--color-black);
+    align-self: flex-start;
 }
 .infoProduct .cantidad {
     display: flex;
@@ -81,16 +71,15 @@
 .cantidad button {
     background-color: white;
 }
-.infoProduct div h6 {
+.infoProduct .row2 h6 {
     font-size: 2rem;
     color: var(--color-brown);
     margin: 0 1rem;
 }
 
-.infoProduct div p {
+.infoProduct .row2 p {
     font-size: 2.4rem;
     color: var(--color-green);
-    margin: 0 1rem;
 }
 
 @media only screen and (min-width: 992px) {
@@ -98,35 +87,37 @@
         font-size: 2.4rem;
     }
     .products {
-        width: 50%;
+        width: 100%;
         display: grid;
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(4, 1fr);
-        gap: 6rem;
+        gap: 4rem;
+        padding: 0 5%;
     }
-    .products .item{
-        margin-top: 0;
-    }
+
     .imgProduct img {
-        width: 25vh;
+        width: 100%;
     }
     .infoProduct img {
-        width: 2.8vh;
+        width: 100%;
     }
     .infoProduct div {
         margin-top: 0.5rem;
     }
 
-    .infoProduct div h5 {
+    .infoProduct .row1 h5 {
         font-size: 1.8rem;
     }
-    .infoProduct div h6 {
-        font-size: 1.5rem;
+    .infoProduct .cantidad{
+        align-self: center;
     }
-    .infoProduct div p {
+    .infoProduct .row2 h6 {
+        font-size: 2.1rem;
+        font-weight: 400;
+    }
+    .infoProduct .row2 p {
         font-size: 2rem;
+        padding-top: 6%;
     }
-
-
 }

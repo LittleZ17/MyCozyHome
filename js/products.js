@@ -46,17 +46,5 @@ const productsArray = [
     image: "assets/img/vintage08.png",
     id: 08,
     price: 40.00,
-  },
-  {
-    name: "Decorative Chest",
-    image: "assets/img/vintage09.png",
-    id: 09,
-    price: 45.00,
-  },
-  {
-    name: "Blue Cupboard",
-    image: "assets/img/vintage10.png",
-    id: 10,
-    price: 30.00,
-  },
+  }
 ];

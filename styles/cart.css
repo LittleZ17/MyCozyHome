@@ -1,3 +1,4 @@
+@import url("style.css");
 * {
     font-family: var(--font);
 }
@@ -62,7 +63,7 @@ button {
 .productInfo{
     width: 77%;
     /* height:100%; 
-    why doesn't this extend height to 100% of infoContainer? */
+    why doesn't this extend height to 100% of? */
     display: flex;
     flex-direction: column;
     align-content: space-between;

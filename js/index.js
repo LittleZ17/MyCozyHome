@@ -10,7 +10,9 @@ function printProducts(productsArray) {
         <div class="infoProduct">
           <div class="row1">
             <h5>${item.name}</h5>
-            <a href="#"><img src="assets/icons/buttonCart.svg" alt="" /></a>
+            <a onclick="addToCart(${
+              item.id
+            })" href="#"><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
           </div>
           <div class="row2">
             <div class="cantidad">
@@ -44,3 +46,20 @@ document.querySelectorAll(".nav-link").forEach((n) =>
     nav.classList.remove("navMenuVisible");
   })
 );
+
+// // cart array
+// let cart = [];
+
+// // Add to cart----------------------------
+
+// function addToCart(id) {
+//   if (cart.some((item) => item.id === id)) {
+//     alert("Product already in cart!");
+//   }
+//   const item = productsArray.find((product) => product.id === id);
+//   // cart.push({
+//   //   ...item,
+//   //   numberOfUnits: 1,
+//   // });
+//   // updateCart();
+// }

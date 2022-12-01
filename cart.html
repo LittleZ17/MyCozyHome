@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Cart</title>
+    <title>Shopping Cart</title>
   </head>
   <body>
     <header class="logo">
@@ -13,7 +13,6 @@
         <h1>MyCozy</h1>
         <h1 class="bold">Home</h1>
       </div>
-
       <nav>
         <button class="menuBtn">
           <img src="assets/icons/hamburger.svg" alt="Menu button" />
@@ -32,20 +31,26 @@
       </nav>
     </header>
 
-    <main>
-      <h2>My Cart</h2>
-      <div></div>
-      <div>
-        <h6>Total</h6>
-        <h5>234.00 €</h5>
-        <button>Buy now</button>
+      <div class="slogan">
+            <p>My <strong>shopping cart </strong> of style</p> 
       </div>
-    </main>
-    <footer>
-      <p>My <strong>shooping cart</strong>of style</p>
-    </footer>
+      <main class="cartContainer">
+        <div id="cartCards" class="cartItems"></div>         
+      </main>
+      <div class="totalPriceContainer">
+        <h1>Total:</h1>
+        <h1 class="totalPrice">234.00 €</h1>
+      </div>
+      <div class="btnContainer">
+        <button class="buyBtn">Buy now</button> 
+      </div>        
+      
+      <footer class="cartFooter slogan">
+        <p>My <strong>shopping cart</strong>of style</p>
+      </footer>
 
+    </div>
     <script src="js/products.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>

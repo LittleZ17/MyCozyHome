@@ -1,0 +1,145 @@
+* {
+    font-family: var(--font);
+}
+
+.cartContainer{
+    display: flex;
+    align-items: center;
+    margin: 0 5%;
+}
+.cartItems{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5%;
+    box-shadow: 0.3em 0.3em 3em rgba(187, 187, 187, 0.4);
+    border-radius: 18px;
+    background-color: var(--color-brown);
+    padding:2%;
+}
+/*remove, imgProduct, infoProduct*/
+.firstLine {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.remove {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background-color: var(--color-brown);
+    cursor: pointer;
+    border-radius: 50px;
+}
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+}
+.imgProduct {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+}
+
+.imgProduct img{
+    width:100%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--color-white);
+}
+
+.productInfo{
+    width: 77%;
+    /* height:100%; 
+    why doesn't this extend height to 100% of infoContainer? */
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin-left: 3%;
+}
+
+.itemInfo{
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;
+    /* not happy using margin-bottom :( */
+    margin-bottom: 5%;
+} 
+
+.itemInfo h5 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-white);
+
+
+}
+.itemInfo h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-white);
+} 
+
+.quantityContainer {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cantidad {
+    display: flex;
+    align-items: center;
+}
+.cantidad button {
+    background-color: var(--color-brown);
+    margin:3%
+}
+.cantidad button img {
+    height: 3rem;
+    width: 3rem;
+}
+.quantityContainer h6 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-yellow);
+    padding: 0 10% ;
+}
+.productInfo p {
+    font-size: 2.4rem;
+    color: var(--color-yellow);
+    margin:1rem;
+}
+.totalPriceContainer {
+    display: flex;
+    justify-content: space-between;
+    margin:1.5rem 5rem;
+}
+.totalPrice {
+    color: var(--color-brown);
+}
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+.buyBtn {
+    width:83vw;
+    height: 50%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 35px;
+    cursor: pointer;
+}
+.cartFooter {
+    display: none;
+}

@@ -2,11 +2,24 @@
 * {
     font-family: var(--font);
 }
-
+.containerCart {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "main"
+      "main"    
+      "slogan";
+      
+}
+.containerCart .sloganCart {
+    display: none;
+}
 .cartContainer{
     display: flex;
     align-items: center;
     margin: 0 5%;
+    flex-direction: column;
 }
 .cartItems{
     display: flex;
@@ -120,27 +133,37 @@ button {
     color: var(--color-yellow);
     margin:1rem;
 }
+.boxBuy {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5% 0;
+}
 .totalPriceContainer {
     display: flex;
     justify-content: space-between;
     margin:1.5rem 5rem;
 }
-.totalPrice {
-    color: var(--color-brown);
+.totalPriceContainer h3 {
+    font-size: 2.5rem;
 }
-.btnContainer {
-    display: flex;
-    justify-content: center;
-    height: 10%;
+.totalPrice {
+    color: var(--color-green);
 }
 .buyBtn {
-    width:83vw;
-    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 1% 0;
+    font-size: 2.1rem;
     background-color: var(--color-black);
     color: var(--color-white);
     border-radius: 35px;
     cursor: pointer;
 }
-.cartFooter {
-    display: none;
+
+
+@media only screen and (min-width: 992px) {
+    
 }

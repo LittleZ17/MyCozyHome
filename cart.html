@@ -8,47 +8,45 @@
     <title>Shopping Cart</title>
   </head>
   <body>
-    <header class="logo">
-      <div class="logoText">
-        <h1>MyCozy</h1>
-        <h1 class="bold">Home</h1>
-      </div>
-      <nav>
-        <button class="menuBtn">
-          <img src="assets/icons/hamburger.svg" alt="Menu button" />
-        </button>
-        <div class="navMenu">
-          <a href="index.html"
-            ><img src="assets/icons/home.svg" alt="home" />Home</a
-          >
-          <a href="cart.html"
-            ><img src="assets/icons/cart.svg" alt="cart" />Cart</a
-          >
-          <a href="#"
-            ><img src="assets/icons/profile.svg" alt="User" />Profile</a
-          >
+    <div class="containerCart">
+      <header class="logo">
+        <div class="logoText">
+          <h1>MyCozy</h1>
+          <h1 class="bold">Home</h1>
         </div>
-      </nav>
-    </header>
-
+        <nav>
+          <button class="menuBtn">
+            <img src="assets/icons/hamburger.svg" alt="Menu button" />
+          </button>
+          <div class="navMenu">
+            <a href="index.html"
+              ><img src="assets/icons/home.svg" alt="home" />Home</a
+            >
+            <a href="cart.html"
+              ><img src="assets/icons/cart.svg" alt="cart" />Cart</a
+            >
+            <a href="#"
+              ><img src="assets/icons/profile.svg" alt="User" />Profile</a
+            >
+          </div>
+        </nav>
+      </header>
+      <div class="sloganCart">
+        <p>My <strong>shopping cart </strong> of style</p>
+      </div>
       <div class="slogan">
-            <p>My <strong>shopping cart </strong> of style</p> 
+        <p>Explore <strong>vintage</strong> design with style</p>
       </div>
       <main class="cartContainer">
-        <div id="cartCards" class="cartItems"></div>         
+        <div id="cartCards" class="cartItems"></div>
+        <div class="boxBuy">
+          <div class="totalPriceContainer">
+            <h3>Total:</h3>
+            <h3 class="totalPrice">234.00 €</h3>
+          </div>
+          <button class="buyBtn">Buy now</button>
+        </div>
       </main>
-      <div class="totalPriceContainer">
-        <h1>Total:</h1>
-        <h1 class="totalPrice">234.00 €</h1>
-      </div>
-      <div class="btnContainer">
-        <button class="buyBtn">Buy now</button> 
-      </div>        
-      
-      <footer class="cartFooter slogan">
-        <p>My <strong>shopping cart</strong>of style</p>
-      </footer>
-
     </div>
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>

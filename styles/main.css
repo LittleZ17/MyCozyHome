@@ -60,13 +60,13 @@
   color: var(--color-black);
   align-self: flex-start;
 }
-.infoProduct .cantidad {
+.infoProduct .quantity {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cantidad button {
-  background-color: white;
+.quantity button {
+  background-color: transparent;
 }
 .infoProduct .row2 h6 {
   font-size: 2rem;
@@ -99,7 +99,6 @@
     gap: 4rem;
     padding: 0 5%;
   }
-
   .imgProduct img {
     width: 100%;
   }

@@ -15,7 +15,7 @@ function printProducts(productsArray) {
             })" href="#"><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
           </div>
           <div class="row2">
-            <div class="cantidad">
+            <div class="quantity">
               <button><img src="assets/icons/buttonMinus.svg" alt="More product" /></button>
               <h6>01</h6>
               <button><img src="assets/icons/buttonAdd.svg" alt="Less product" /></button>

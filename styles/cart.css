@@ -1,25 +1,23 @@
-@import url("style.css");
-* {
-    font-family: var(--font);
+
+.sloganCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6% 0 3% 0;
 }
-.containerCart {
-    display: grid;
-    grid-template-areas:
-      "header"
-      "main"
-      "main"
-      "main"    
-      "slogan";
-      
+  .sloganCart p {
+    font-size: 1.8rem;
 }
-.containerCart .sloganCart {
-    display: none;
+  .sloganCart p strong {
+    font-weight: 900;
 }
 .cartContainer{
     display: flex;
     align-items: center;
-    margin: 0 5%;
     flex-direction: column;
+    justify-content: space-between;
+    height: 75vh;
+    margin: 0 5%;
 }
 .cartItems{
     display: flex;
@@ -27,8 +25,7 @@
     flex-direction: column;
     width: 100%;
 }
-
-.item{
+.itemCall{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -38,7 +35,44 @@
     background-color: var(--color-brown);
     padding:2%;
 }
-/*remove, imgProduct, infoProduct*/
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+}
+.imgProductCart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+}
+.imgProductCart img{
+    width:100%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--color-white);
+}
+.productInfoCart{
+    width: 77%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin-left: 3%;
+}
+.itemInfoCart{
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;
+    padding-bottom: 5%;
+} 
+.itemInfoCart h5 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-white);
+}
+.itemInfoCart h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-white);
+} 
 .firstLine {
     display: flex;
     flex-direction: row;
@@ -46,105 +80,42 @@
     justify-content: space-between;
 }
 .remove {
-    width: 20%;
-    display: flex;
-    justify-content: flex-end;
+    padding-right: 2%;
+    background-color: transparent;
 }
-
-button {
-    background-color: var(--color-brown);
-    cursor: pointer;
-    border-radius: 50px;
-}
-.infoContainer {
-    display: flex;
-    flex-direction: row;
-}
-.imgProduct {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 25%;
-}
-
-.imgProduct img{
-    width:100%;
-    border-radius: 10px 10px 10px 10px;
-    background-color: var(--color-white);
-}
-
-.productInfo{
-    width: 77%;
-    /* height:100%; 
-    why doesn't this extend height to 100% of? */
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    margin-left: 3%;
-}
-
-.itemInfo{
-    display: flex;
-    flex-direction: column;   
-    align-items: flex-start;
-    /* not happy using margin-bottom :( */
-    margin-bottom: 5%;
-} 
-
-.itemInfo h5 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--color-white);
-
-
-}
-.itemInfo h4 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--color-white);
-} 
-
 .quantityContainer {
     display: flex;
     flex-direction: row;  
     justify-content: space-between;
     align-items: flex-end;
 }
-.cantidad {
+.quantityCart {
     display: flex;
     align-items: center;
 }
-.cantidad button {
-    background-color: var(--color-brown);
-    margin:3%
-}
-.cantidad button img {
+.quantityCart button img {
     height: 3rem;
     width: 3rem;
 }
-.quantityContainer h6 {
+.quantityCart h6 {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--color-yellow);
     padding: 0 10% ;
 }
-.productInfo p {
+.quantityContainer p {
     font-size: 2.4rem;
     color: var(--color-yellow);
-    margin:1rem;
 }
-.boxBuy {
-    display: flex;
-    flex-direction: column;
+.payBox{
     width: 100%;
     margin: 5% 0;
 }
-.totalPriceContainer {
+.totalPriceCart {
     display: flex;
     justify-content: space-between;
-    margin:1.5rem 5rem;
 }
-.totalPriceContainer h3 {
+.totalPriceCart h3 {
     font-size: 2.5rem;
 }
 .totalPrice {
@@ -155,12 +126,19 @@ button {
     align-items: center;
     justify-content: center;
     width:100%;
+    margin-top: 5%;
     padding: 1% 0;
     font-size: 2.1rem;
     background-color: var(--color-black);
     color: var(--color-white);
     border-radius: 35px;
     cursor: pointer;
+}
+.cancelCart{
+    background-color: rgb(143, 131, 113, 0.4);
+} 
+.deleteSlogan{
+    display: none;
 }
 
 

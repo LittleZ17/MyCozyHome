@@ -37,7 +37,7 @@ const body = document.querySelector("body");
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("menuBtnVisible");
   nav.classList.toggle("navMenuVisible");
-  body.classList.toggle("no-scroll"); //para que no haga scroll el body cuando el menu este desplegado
+  body.classList.toggle("no-scroll");
 });
 
 document.querySelectorAll(".nav-link").forEach((n) =>
@@ -46,20 +46,3 @@ document.querySelectorAll(".nav-link").forEach((n) =>
     nav.classList.remove("navMenuVisible");
   })
 );
-
-// // cart array
-// let cart = [];
-
-// // Add to cart----------------------------
-
-// function addToCart(id) {
-//   if (cart.some((item) => item.id === id)) {
-//     alert("Product already in cart!");
-//   }
-//   const item = productsArray.find((product) => product.id === id);
-//   // cart.push({
-//   //   ...item,
-//   //   numberOfUnits: 1,
-//   // });
-//   // updateCart();
-// }

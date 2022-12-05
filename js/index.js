@@ -82,60 +82,61 @@ let cart = [];
 function addToCart(id) {
   // check if product already exist in cart
   if (cart.some((product) => product.id === id)) {
-    window.alert("ojo!!!peligro!!");
-    // Swal.fire({
-    //   title: "Product already in cart!",
-    //   showClass: {
-    //     popup: "animate__animated animate__fadeInDown",
-    //   },
-    //   hideClass: {
-    //     popup: "animate__animated animate__fadeOutUp",
-    //   },
-    // });
+    Swal.fire({
+      title: "Product already in cart!",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   } else {
     const product = productsArray.find((item) => item.id === id);
-    cart.push(product);
+    cart.push({
+      ...product,
+      numberOfUnits: count,
+    });
   }
-  console.log(cart);
-  // updateCart();
+  updateCart();
 }
 
-// // update cart
-// function updateCart() {
-//   renderCartItems();
-//   //renderSubtotal();
-// }
+// update cart
+function updateCart() {
+  renderCartItems();
+  //renderSubtotal();
+}
 
-// //render cart items
+//render cart items
 
-// function renderCartItems() {
-//   productsInsideCart.innerHTML = ""; //clear cart element
-//   cart.forEach((item) => {
-//     productsInsideCart.innerHTML += `
-//     <div class="itemCall">
-//       <div class="infoContainer">
-//         <div class="imgProductCart">
-//           <img src= "${item.image}" alt="${item.name}" />
-//         </div>
-//         <div class="productInfoCart">
-//           <div class="itemInfoCart">
-//             <div class="firstLine">
-//               <h5>${item.name}</h5>
-//               <button class="remove"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
-//             </div>
-//             <h4>${item.price.toFixed(2)} €/item</h4>
-//           </div>
-//           <div class="quantityContainer">
-//             <div class="quantity quantityCart">
-//               <button><img src="assets/icons/buttonMinusCart.svg" alt="Minus one product" /></button>
-//               <h6>${item.numberOfUnits}</h6>
-//               <button><img src="assets/icons/buttonAddCart.svg" alt="Add one product" /></button>
-//             </div>
-//             <p>20.00 €</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//     `;
-//   });
-// }
+function renderCartItems() {
+  productsInsideCart.innerHTML = ""; //clear cart element
+  cart.forEach((item) => {
+    productsInsideCart.innerHTML += `
+    <div class="itemCall">
+      <div class="infoContainer">
+        <div class="imgProductCart">
+          <img src= "${item.image}" alt="${item.name}" />
+        </div>
+        <div class="productInfoCart">
+          <div class="itemInfoCart">
+            <div class="firstLine">
+              <h5>${item.name}</h5>
+              <button class="remove"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
+            </div>
+            <h4>${item.price.toFixed(2)} €/item</h4>
+          </div>
+          <div class="quantityContainer">
+            <div class="quantity quantityCart">
+              <button><img src="assets/icons/buttonMinusCart.svg" alt="Minus one product" /></button>
+              <h6>${item.numberOfUnits}</h6>
+              <button><img src="assets/icons/buttonAddCart.svg" alt="Add one product" /></button>
+            </div>
+            <p>20.00 €</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+  });
+}

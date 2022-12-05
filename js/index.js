@@ -18,6 +18,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 // PRINT PRODUCTS IN index.html
 
 const productsCard = document.querySelector("#cards");
+const productsInsideCart = document.querySelector("#cartCards");
 
 function printProducts(productsArray) {
   productsArray.forEach((item) => {
@@ -31,7 +32,7 @@ function printProducts(productsArray) {
             <h5>${item.name}</h5>
             <a onclick="addToCart(${
               item.id
-            })" href="#"><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
+            })" ><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
           </div>
           <div class="row2">
             <div class="quantity">
@@ -74,28 +75,30 @@ function currentCount() {
   counter.innerText = count;
 }
 
-// // cart array
-// let cart = [];
+// cart array
+let cart = [];
 
-// // ADD TO CART
-// function addToCart(id) {
-//   // check if product already exist in cart
-//   if (cart.some((product) => product.id === id)) {
-//     Swal.fire({
-//       title: "Product already in cart!",
-//       showClass: {
-//         popup: "animate__animated animate__fadeInDown",
-//       },
-//       hideClass: {
-//         popup: "animate__animated animate__fadeOutUp",
-//       },
-//     });
-//   } else {
-//     const product = productsArray.find((item) => item.id === id);
-//     cart.push(product);
-//   }
-//   updateCart();
-// }
+// ADD TO CART
+function addToCart(id) {
+  // check if product already exist in cart
+  if (cart.some((product) => product.id === id)) {
+    window.alert("ojo!!!peligro!!");
+    // Swal.fire({
+    //   title: "Product already in cart!",
+    //   showClass: {
+    //     popup: "animate__animated animate__fadeInDown",
+    //   },
+    //   hideClass: {
+    //     popup: "animate__animated animate__fadeOutUp",
+    //   },
+    // });
+  } else {
+    const product = productsArray.find((item) => item.id === id);
+    cart.push(product);
+  }
+  console.log(cart);
+  // updateCart();
+}
 
 // // update cart
 // function updateCart() {
@@ -104,7 +107,6 @@ function currentCount() {
 // }
 
 // //render cart items
-// const productsInsideCart = document.querySelector("#cartCards");
 
 // function renderCartItems() {
 //   productsInsideCart.innerHTML = ""; //clear cart element

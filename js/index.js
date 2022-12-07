@@ -19,32 +19,37 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 
 const productsCard = document.querySelector("#cards");
 const productsInsideCart = document.querySelector("#cartCards");
+const priceTotalCart = document.querySelector("#totalMoney");
 
 function printProducts(productsArray) {
   productsArray.forEach((item) => {
     productsCard.innerHTML += `
-      <div class="item">
-          <div class="imgProduct">
-            <img src= "${item.image}" class="card-img-top" alt="${item.name}" />
-          </div>
-        <div class="infoProduct">
-          <div class="row1">
-            <h5>${item.name}</h5>
-            <a onclick="addToCart(${
+    <div class="item">
+        <div class="imgProduct">
+          <img src= "${item.image}" class="card-img-top" alt="${item.name}" />
+        </div>
+      <div class="infoProduct">
+        <div class="row1">
+          <h5>${item.name}</h5>
+          <a onclick="addToCart(${
+            item.id
+          })"><img src="assets/icons/buttonCart.svg" alt="Add product to cart"></a>
+        </div>
+        <div class="row2">
+          <div class="quantity">
+            <button id="minus" onclick="lessItem(${
               item.id
-            })" ><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
+            })"><img src="assets/icons/buttonMinus.svg" alt="Minus one product"></button>
+            <input type="text" value="0" id="item-${item.id}">
+            <button id="plus" onclick="addItem(${
+              item.id
+            })"><img src="assets/icons/buttonAdd.svg" alt="Add one product"></button>
           </div>
-          <div class="row2">
-            <div class="quantity">
-              <button id="minus"><img src="assets/icons/buttonMinus.svg" alt="Minus one product" /></button>
-              <h6 id="counter">0</h6>
-              <button id="plus"><img src="assets/icons/buttonAdd.svg" alt="Add one product" /></button>
-            </div>
-            <p>${item.price.toFixed(2)} €</p>
-          </div>
+          <p>${item.price.toFixed(2)} €</p>
         </div>
       </div>
-  `;
+    </div>
+`;
   });
 }
 
@@ -52,27 +57,25 @@ printProducts(productsArray);
 
 // COUNTER IN HTML
 let minus = document.querySelector("#minus");
-let counter = document.querySelector("#counter");
 let plus = document.querySelector("#plus");
 let count = 0;
 
-currentCount();
-
-minus.addEventListener("click", () => {
-  if (count > 0) {
-    count--;
-  }
-  currentCount();
-});
-plus.addEventListener("click", () => {
+function addItem(id) {
+  let valueInput = document.getElementById(`item-${id}`);
+  let count = parseInt(valueInput.value); // valor entero
   if (count < 10) {
     count++;
   }
-  currentCount();
-});
+  valueInput.value = count;
+}
 
-function currentCount() {
-  counter.innerText = count;
+function lessItem(id) {
+  let valueInput = document.getElementById(`item-${id}`);
+  let count = parseInt(valueInput.value);
+  if (count > 0) {
+    count--;
+  }
+  valueInput.value = count;
 }
 
 // cart array
@@ -80,7 +83,7 @@ let cart = [];
 
 // ADD TO CART
 function addToCart(id) {
-  // check if product already exist in cart
+  let valueCount = document.getElementById(`item-${id}`).value;
   if (cart.some((product) => product.id === id)) {
     Swal.fire({
       title: "Product already in cart!",
@@ -95,8 +98,9 @@ function addToCart(id) {
     const product = productsArray.find((item) => item.id === id);
     cart.push({
       ...product,
-      numberOfUnits: count,
+      numberOfUnits: parseInt(valueCount),
     });
+    console.log(cart);
   }
   updateCart();
 }
@@ -104,11 +108,10 @@ function addToCart(id) {
 // update cart
 function updateCart() {
   renderCartItems();
-  //renderSubtotal();
+  renderSubtotal();
 }
 
 //render cart items
-
 function renderCartItems() {
   productsInsideCart.innerHTML = ""; //clear cart element
   cart.forEach((item) => {
@@ -139,4 +142,16 @@ function renderCartItems() {
     </div>
     `;
   });
+}
+
+//  calculate and render subtotal
+function renderSubtotal() {
+  let totalPrice = 0,
+    totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += item.price * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)} €`;
 }

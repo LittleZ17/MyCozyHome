@@ -11,7 +11,11 @@ if (path === "cart.html") {
   renderCartItems();
   renderSubtotal();
   renderTotal();
+  // removeItem();
 }
+
+// let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+
 
 // HAMBURGER MENU
 function addMenuHamburger() {
@@ -128,7 +132,7 @@ function renderCartItems() {
           <div class="itemInfoCart">
             <div class="firstLine">
               <h5>${item.name}</h5>
-              <button class="remove"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
+              <button id="remove" onclick="removeItem(${item.id})"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
             </div>
             <h4>${item.price.toFixed(2)} €/item</h4>
           </div>
@@ -157,7 +161,6 @@ function renderSubtotal() {
     let subTotalItem = document.getElementById(`subtotalPrice-${item.id}`);
     subTotalItem.innerHTML = `${subtotalPrice.toFixed(2)} €`;
   });
-  console.log(newCart);
 }
 // CALCULATE TOTAL
 function renderTotal() {
@@ -169,5 +172,17 @@ function renderTotal() {
     totalItems += item.numberOfUnits;
   });
   const priceTotalCart = document.querySelector("#totalPriceId");
-  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)} €`;
+  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)}`;
 }
+
+// REMOVE ITEMS
+
+function removeItem(id){
+  let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+  let res = cart.filter((item) => item.id !== id)
+  localStorage.clear();
+  localStorage.setItem("newCart", JSON.stringify(res));
+  const productsInsideCart = document.querySelector("#cartCards");
+  productsInsideCart.innerHTML = "";
+  renderCartItems();
+  };

@@ -21,7 +21,7 @@ const productsCard = document.querySelector("#cards");
 const productsInsideCart = document.querySelector("#cartCards");
 const priceTotalCart = document.querySelector("#totalMoney");
 
-function printProducts(productsArray) {
+function printProducts() {
   productsArray.forEach((item) => {
     productsCard.innerHTML += `
     <div class="item">
@@ -52,8 +52,7 @@ function printProducts(productsArray) {
 `;
   });
 }
-
-printProducts(productsArray);
+printProducts();
 
 // COUNTER IN HTML
 let minus = document.querySelector("#minus");
@@ -77,9 +76,18 @@ function lessItem(id) {
   }
   valueInput.value = count;
 }
-
-// cart array
 let cart = [];
+
+// download info
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("newCart")) {
+    cart = JSON.parse(localStorage.getItem("newCart"));
+    renderCartItems();
+  }
+});
+// cart array
+// Obtener el arreglo de localStorage
+// let cart = JSON.parse(localStorage.getItem("newCart")) || [];
 
 // ADD TO CART
 function addToCart(id) {
@@ -100,20 +108,15 @@ function addToCart(id) {
       ...product,
       numberOfUnits: parseInt(valueCount),
     });
-    console.log(cart);
   }
   updateCart();
 }
 
-// update cart
-function updateCart() {
-  renderCartItems();
-  renderSubtotal();
-}
-
+//necesitamos mostrar el carrito ya renderizado por medio de la session store
 //render cart items
-function renderCartItems() {
-  productsInsideCart.innerHTML = ""; //clear cart element
+function renderCartItems(cart) {
+  //clear cart element
+  // productsInsideCart.innerHTML = "";
   cart.forEach((item) => {
     productsInsideCart.innerHTML += `
     <div class="itemCall">
@@ -142,8 +145,17 @@ function renderCartItems() {
     </div>
     `;
   });
+  console.log(cart);
 }
+renderCartItems(cart);
 
+// update cart
+function updateCart() {
+  // Se guarda en localStorage despues de JSON stringificarlo
+  localStorage.setItem("newCart", JSON.stringify(cart));
+  renderCartItems(cart);
+  renderSubtotal();
+}
 //  calculate and render subtotal
 function renderSubtotal() {
   let totalPrice = 0,

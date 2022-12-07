@@ -52,7 +52,7 @@ function printProducts() {
             <button id="minus" onclick="lessItem(${
               item.id
             })"><img src="assets/icons/buttonMinus.svg" alt="Minus one product"></button>
-            <input type="text" value="0" id="item-${item.id}">
+            <input type="text" value="1" id="item-${item.id}">
             <button id="plus" onclick="addItem(${
               item.id
             })"><img src="assets/icons/buttonAdd.svg" alt="Add one product"></button>

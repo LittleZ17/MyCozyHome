@@ -21,6 +21,7 @@ const productsCard = document.querySelector("#cards");
 const productsInsideCart = document.querySelector("#cartCards");
 
 function printProducts(productsArray) {
+  // <h6 id="counter-${item.id}" value=0>${item.numberOfUnits}</h6>
   productsArray.forEach((item) => {
     productsCard.innerHTML += `
       <div class="item">
@@ -30,15 +31,13 @@ function printProducts(productsArray) {
         <div class="infoProduct">
           <div class="row1">
             <h5>${item.name}</h5>
-            <a onclick="addToCart(${
-              item.id
-            })" ><img src="assets/icons/buttonCart.svg" alt="Add product to cart" /></a>
+            <a onclick="addToCart(${item.id})"><img src="assets/icons/buttonCart.svg" alt="Add product to cart"></a>
           </div>
           <div class="row2">
             <div class="quantity">
-              <button id="minus"><img src="assets/icons/buttonMinus.svg" alt="Minus one product" /></button>
-              <h6 id="counter">0</h6>
-              <button id="plus"><img src="assets/icons/buttonAdd.svg" alt="Add one product" /></button>
+              <button id="minus" onclick="lessItem(${item.id})"><img src="assets/icons/buttonMinus.svg" alt="Minus one product"></button>
+              <input type="text" value="0" id="item-${item.id}">
+              <button id="plus" onclick="addItem(${item.id})"><img src="assets/icons/buttonAdd.svg" alt="Add one product"></button>
             </div>
             <p>${item.price.toFixed(2)} €</p>
           </div>
@@ -52,54 +51,89 @@ printProducts(productsArray);
 
 // COUNTER IN HTML
 let minus = document.querySelector("#minus");
-let counter = document.querySelector("#counter");
+// let counter = document.querySelector("#counter");
 let plus = document.querySelector("#plus");
 let count = 0;
 
 currentCount();
 
-minus.addEventListener("click", () => {
+function addItem(id) {
+  let valueInput = document.getElementById(`item-${id}`)
+  let count = parseInt(valueInput.value) // valor entero
+  if (count < 10){
+    count++;
+  }
+  valueInput.value = count;
+}
+
+function lessItem(id){
+  let valueInput = document.getElementById(`item-${id}`)
+  let count = parseInt(valueInput.value)
   if (count > 0) {
     count--;
   }
-  currentCount();
-});
-plus.addEventListener("click", () => {
-  if (count < 10) {
-    count++;
-  }
-  currentCount();
-});
-
-function currentCount() {
-  counter.innerText = count;
+  valueInput.value = count;
 }
+// minus.addEventListener("click", () => {
+//   if (count > 0) {
+//     count--;
+//   }
+//   currentCount();
+// });
+// plus.addEventListener("click", () => {
+//   if (count < 10) {
+//     count++;
+//   }
+//   currentCount();
+// });
+
+// function currentCount() {
+//   // console.log(count)
+//   valueInput.value = count;
+// }
 
 // cart array
+
 let cart = [];
+updateCart() 
+
 
 // ADD TO CART
-function addToCart(id) {
-  // check if product already exist in cart
-  if (cart.some((product) => product.id === id)) {
-    Swal.fire({
-      title: "Product already in cart!",
-      showClass: {
-        popup: "animate__animated animate__fadeInDown",
-      },
-      hideClass: {
-        popup: "animate__animated animate__fadeOutUp",
-      },
-    });
-  } else {
-    const product = productsArray.find((item) => item.id === id);
+function addToCart(id){
+  if (cart.some((item) => item.id === id)){
+    alert("EOOO YA LO TIENES!");
+   }else{
+    const item = productsArray.find((product) => product.id === id)
     cart.push({
       ...product,
       numberOfUnits: count,
     });
   }
+  console.log(cart)
   updateCart();
 }
+
+// function addToCart(id) {
+//   // check if product already exist in cart
+//   if (cart.some((product) => product.id === id)) {
+//     Swal.fire({
+//       title: "Product already in cart!",
+//       showClass: {
+//         popup: "animate__animated animate__fadeInDown",
+//       },
+//       hideClass: {
+//         popup: "animate__animated animate__fadeOutUp",
+//       },
+//     });
+//   } else {
+//     const product = productsArray.find((item) => item.id === id);
+//     cart.push({
+//       ...product,
+//       numberOfUnits: count,
+//     });
+//   }
+//   updateCart();
+// }
 
 // update cart
 function updateCart() {

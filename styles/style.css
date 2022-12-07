@@ -30,6 +30,9 @@ body {
   width: 100vw;
   height: 100vh;
 }
+a, button *{
+  cursor: pointer;
+}
 
 .container {
   display: grid;

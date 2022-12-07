@@ -5,10 +5,6 @@ const productsArray = [
     id: 01,
     price: 30.2,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Chest Of Drawers",
@@ -16,10 +12,6 @@ const productsArray = [
     id: 02,
     price: 99.1,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Wooden Stool",
@@ -27,10 +19,6 @@ const productsArray = [
     id: 03,
     price: 60.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Covered Desk",
@@ -38,10 +26,6 @@ const productsArray = [
     id: 04,
     price: 20.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Side Cupboard",
@@ -49,10 +33,6 @@ const productsArray = [
     id: 05,
     price: 80.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Antique Globe",
@@ -60,10 +40,6 @@ const productsArray = [
     id: 06,
     price: 20.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Sideboard",
@@ -71,10 +47,6 @@ const productsArray = [
     id: 07,
     price: 60.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
   {
     name: "Tall Cupboard",
@@ -82,9 +54,5 @@ const productsArray = [
     id: 08,
     price: 40.0,
     inStock: 10,
-<<<<<<< HEAD
-=======
-    // numberOfUnits: 0,
->>>>>>> 5f0334d61f932b18f13c53dacb5e0ed59a4d212b
   },
 ];

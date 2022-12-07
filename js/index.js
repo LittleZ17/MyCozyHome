@@ -55,7 +55,6 @@ let minus = document.querySelector("#minus");
 let plus = document.querySelector("#plus");
 let count = 0;
 
-currentCount();
 
 function addItem(id) {
   let valueInput = document.getElementById(`item-${id}`)
@@ -100,13 +99,15 @@ updateCart()
 
 // ADD TO CART
 function addToCart(id){
+  // console.log(document.getElementById(`item-${id}`).value);
+  const abc = document.getElementById(`item-${id}`).value
   if (cart.some((item) => item.id === id)){
     alert("EOOO YA LO TIENES!");
    }else{
     const item = productsArray.find((product) => product.id === id)
     cart.push({
-      ...product,
-      numberOfUnits: count,
+      ...item,
+      numberOfUnits: abc,
     });
   }
   console.log(cart)

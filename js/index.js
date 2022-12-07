@@ -45,14 +45,7 @@ function printProducts(productsArray) {
               item.id
             })"><img src="assets/icons/buttonAdd.svg" alt="Add one product"></button>
           </div>
-          <div class="row2">
-            <div class="quantity">
-              <button id="minus"><img src="assets/icons/buttonMinus.svg" alt="Minus one product" /></button>
-              <h6 id="counter">0</h6>
-              <button id="plus"><img src="assets/icons/buttonAdd.svg" alt="Add one product" /></button>
-            </div>
-            <p>${item.price.toFixed(2)} €</p>
-          </div>
+          <p>${item.price.toFixed(2)} €</p>
         </div>
       </div>
     </div>
@@ -87,7 +80,6 @@ function lessItem(id) {
 
 // cart array
 let cart = [];
-updateCart();
 
 // ADD TO CART
 function addToCart(id) {
@@ -106,11 +98,10 @@ function addToCart(id) {
     const product = productsArray.find((item) => item.id === id);
     cart.push({
       ...product,
-      numberOfUnits: count,
+      numberOfUnits: parseInt(valueCount),
     });
     console.log(cart);
   }
-  console.log(cart);
   updateCart();
 }
 

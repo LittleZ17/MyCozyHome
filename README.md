@@ -1,6 +1,5 @@
 
-<img src= "https://user-images.githubusercontent.com/116794919/206201196-122f4b2e-595d-4513-9cab-398e96a7de1a.png">
-</img>
+<p align="center"> <img src= "https://user-images.githubusercontent.com/116794919/206201196-122f4b2e-595d-4513-9cab-398e96a7de1a.png"></img> </p>
 
 
 1. [Description](#description)

@@ -6,7 +6,7 @@
 2. [Installation](#installation)
 3. [Technologies](#technologies)
 4. [Tools](#tools)
-
+5. [Design](#design)
 
 
 
@@ -38,12 +38,11 @@
 </ul>
 
 
+## Design
 
+<img width="373" alt="Mobile version" src="https://user-images.githubusercontent.com/116796010/206304419-624ce430-b966-4d88-a02d-735d80cf739d.png">
 
-
-
-
-
+<img width="729" alt="Desktop version" src="https://user-images.githubusercontent.com/116796010/206304635-ea0d7a45-e7e5-461f-8290-f99d0a1ac207.png">
 
 
 

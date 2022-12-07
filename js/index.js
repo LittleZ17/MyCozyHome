@@ -1,18 +1,20 @@
-const url = window.location.href
-const splitUrl = url.split("/")
-const path = splitUrl[splitUrl.length-1]
+const url = window.location.href;
+const splitUrl = url.split("/");
+const path = splitUrl[splitUrl.length - 1];
 
-if (path === 'index.html'){
+if (path === "index.html") {
   addMenuHamburger();
   printProducts();
 }
-if (path === 'cart.html'){
+if (path === "cart.html") {
   addMenuHamburger();
   renderCartItems();
+  renderSubtotal();
+  renderTotal();
 }
 
-// Function menu hamburger
-function addMenuHamburger(){
+// HAMBURGER MENU
+function addMenuHamburger() {
   const menuBtn = document.querySelector(".menuBtn");
   const nav = document.querySelector(".navMenu");
   const body = document.querySelector("body");
@@ -21,17 +23,16 @@ function addMenuHamburger(){
     nav.classList.toggle("navMenuVisible");
     body.classList.toggle("no-scroll");
   });
-  
+
   document.querySelectorAll(".nav-link").forEach((n) =>
-  n.addEventListener("click", () => {
-    menuBtn.classList.remove("menuBtnVisible");
-    nav.classList.remove("navMenuVisible");
-  })
+    n.addEventListener("click", () => {
+      menuBtn.classList.remove("menuBtnVisible");
+      nav.classList.remove("navMenuVisible");
+    })
   );
 }
 
-// PRINT PRODUCTS IN index.html
-
+// PRINT PRODUCTS IN INDEX
 function printProducts() {
   const productsCard = document.querySelector("#cards");
   productsArray.forEach((item) => {
@@ -66,27 +67,27 @@ function printProducts() {
 }
 
 // COUNTER IN HTML
-  let minus = document.querySelector("#minus");
-  let plus = document.querySelector("#plus");
-  let count = 0;
-  
-  function addItem(id) {
-    let valueInput = document.getElementById(`item-${id}`);
-    let count = parseInt(valueInput.value); // valor entero
-    if (count < 10) {
-      count++;
-    }
-    valueInput.value = count;
+let minus = document.querySelector("#minus");
+let plus = document.querySelector("#plus");
+let count = 0;
+
+function addItem(id) {
+  let valueInput = document.getElementById(`item-${id}`);
+  let count = parseInt(valueInput.value); // valor entero
+  if (count < 10) {
+    count++;
   }
-  
-  function lessItem(id) {
-    let valueInput = document.getElementById(`item-${id}`);
-    let count = parseInt(valueInput.value);
-    if (count > 0) {
-      count--;
-    }
-    valueInput.value = count;
+  valueInput.value = count;
+}
+
+function lessItem(id) {
+  let valueInput = document.getElementById(`item-${id}`);
+  let count = parseInt(valueInput.value);
+  if (count > 0) {
+    count--;
   }
+  valueInput.value = count;
+}
 
 // ADD TO CART
 function addToCart(id) {
@@ -112,7 +113,7 @@ function addToCart(id) {
   localStorage.setItem("newCart", JSON.stringify(cart));
 }
 
-//render cart items
+//PRINT PRODUCTS IN CART
 function renderCartItems() {
   let cart = JSON.parse(localStorage.getItem("newCart")) || [];
   const productsInsideCart = document.querySelector("#cartCards");
@@ -137,25 +138,36 @@ function renderCartItems() {
               <h6>${item.numberOfUnits}</h6>
               <button><img src="assets/icons/buttonAddCart.svg" alt="Add one product" /></button>
             </div>
-            <p>20.00 €</p>
+            <p id="subtotalPrice-${item.id}"></p>
           </div>
         </div>
       </div>
     </div>
     `;
   });
-//   console.log(cart);
 }
 
-const priceTotalCart = document.querySelector("#totalMoney");
-//  calculate and render subtotal
-// function renderSubtotal() {
-//   let totalPrice = 0,
-//     totalItems = 0;
-
-//   cart.forEach((item) => {
-//     totalPrice += item.price * item.numberOfUnits;
-//     totalItems += item.numberOfUnits;
-//   });
-//   priceTotalCart.innerHTML = `${totalPrice.toFixed(2)} €`;
-//}
+//CALCULATE SUBTOTAL
+function renderSubtotal() {
+  let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+  console.log(cart);
+  let newCart = cart.map((item) => {
+    let subtotalPrice = 0;
+    subtotalPrice = item.price * item.numberOfUnits;
+    let subTotalItem = document.getElementById(`subtotalPrice-${item.id}`);
+    subTotalItem.innerHTML = `${subtotalPrice.toFixed(2)} €`;
+  });
+  console.log(newCart);
+}
+// CALCULATE TOTAL
+function renderTotal() {
+  let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+  let totalPrice = 0,
+    totalItems = 0;
+  cart.forEach((item) => {
+    totalPrice += item.price * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+  const priceTotalCart = document.querySelector("#totalPriceId");
+  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)} €`;
+}

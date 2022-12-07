@@ -38,8 +38,7 @@
   flex-direction: column;
   padding: 6% 9%;
 }
-.row1,
-.row2 {
+.row1,.row2 {
   width: 100%;
   display: flex;
   align-items: center;
@@ -63,15 +62,18 @@
 .infoProduct .quantity {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 35%;
+  align-self: flex-start;
 }
 .quantity button {
   background-color: transparent;
 }
-.infoProduct .row2 h6 {
+.infoProduct .row2 input {
+  width: 10%;
   font-size: 2rem;
   color: var(--color-brown);
-  margin: 0 1rem;
+  align-self: center;
 }
 
 .infoProduct .row2 p {

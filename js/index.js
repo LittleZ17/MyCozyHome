@@ -39,7 +39,7 @@ function printProducts() {
     productsCard.innerHTML += `
     <div class="item">
         <div class="imgProduct">
-          <img src= "${item.image}" class="card-img-top" alt="${item.name}" />
+          <img src= "${item.image}" alt="${item.name}" />
         </div>
       <div class="infoProduct">
         <div class="row1">

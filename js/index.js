@@ -107,6 +107,13 @@ function addToCart(id) {
       },
     });
   } else {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Added to your cart!",
+      showConfirmButton: false,
+      timer: 1000,
+    });
     const product = productsArray.find((item) => item.id === id);
     cart.push({
       ...product,
@@ -189,9 +196,23 @@ function removeItem(id) {
 
 // REMOVE ALL ITEMS
 function removeAllItems() {
-  let cart = JSON.parse(localStorage.getItem("newCart")) || [];
-  localStorage.clear();
-  const productsInsideCart = document.querySelector("#cartCards");
-  productsInsideCart.innerHTML = "";
-  renderCartItems();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+      localStorage.clear();
+      const productsInsideCart = document.querySelector("#cartCards");
+      productsInsideCart.innerHTML = "";
+      window.location.reload();
+      renderCartItems();
+      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    }
+  });
 }

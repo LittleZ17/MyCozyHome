@@ -10,6 +10,19 @@
 .slogan p strong {
   font-weight: 900;
 }
+.products {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgProduct {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+}
 .listProducts {
   display: flex;
   align-items: center;
@@ -19,13 +32,13 @@
 .products .item {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   margin-top: 5%;
   box-shadow: 0.3em 0.3em 3em rgba(187, 187, 187, 0.4);
   border-radius: 30px;
+  overflow: hidden;
 }
 .imgProduct img {
-  width: 40vh;
   border-radius: 30px 30px 0 0;
   background-color: var(--color-background);
 }
@@ -36,9 +49,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
   padding: 6% 9%;
 }
-.row1,.row2 {
+.row1,
+.row2 {
   width: 100%;
   display: flex;
   align-items: center;
@@ -62,7 +77,6 @@
 .infoProduct .quantity {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 35%;
   align-self: flex-start;
 }
@@ -71,6 +85,7 @@
 }
 .infoProduct .row2 input {
   width: 10%;
+  margin: 0 10%;
   font-size: 2rem;
   color: var(--color-brown);
   align-self: center;
@@ -98,7 +113,7 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(4, 1fr);
-    gap: 4rem;
+    gap: 2rem;
     padding: 0 5%;
   }
   .imgProduct img {
@@ -114,15 +129,21 @@
   .infoProduct .row1 h5 {
     font-size: 1.8rem;
   }
-  .infoProduct .cantidad {
-    align-self: center;
-  }
-  .infoProduct .row2 h6 {
+
+  .infoProduct .row2 input {
     font-size: 2.1rem;
     font-weight: 400;
+    margin: 0 6%;
   }
   .infoProduct .row2 p {
     font-size: 2rem;
-    padding-top: 6%;
+  }
+
+  .infoProduct .quantity {
+    width: 100%;
+    align-self: baseline;
+  }
+  .quantity button {
+    width: 24%;
   }
 }

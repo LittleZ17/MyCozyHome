@@ -16,7 +16,6 @@ if (path === "cart.html") {
 
 // let cart = JSON.parse(localStorage.getItem("newCart")) || [];
 
-
 // HAMBURGER MENU
 function addMenuHamburger() {
   const menuBtn = document.querySelector(".menuBtn");
@@ -132,7 +131,9 @@ function renderCartItems() {
           <div class="itemInfoCart">
             <div class="firstLine">
               <h5>${item.name}</h5>
-              <button id="remove" onclick="removeItem(${item.id})"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
+              <button id="remove" onclick="removeItem(${
+                item.id
+              })"><img src="assets/icons/buttonXRemove.svg" alt="Remove product"/></button>
             </div>
             <h4>${item.price.toFixed(2)} €/item</h4>
           </div>
@@ -154,8 +155,7 @@ function renderCartItems() {
 //CALCULATE SUBTOTAL
 function renderSubtotal() {
   let cart = JSON.parse(localStorage.getItem("newCart")) || [];
-  console.log(cart);
-  let newCart = cart.map((item) => {
+  cart.map((item) => {
     let subtotalPrice = 0;
     subtotalPrice = item.price * item.numberOfUnits;
     let subTotalItem = document.getElementById(`subtotalPrice-${item.id}`);
@@ -173,17 +173,25 @@ function renderTotal() {
     totalItems += item.numberOfUnits;
   });
   const priceTotalCart = document.querySelector("#totalPriceId");
-  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)}`;
+  priceTotalCart.innerHTML = `${totalPrice.toFixed(2)} €`;
 }
 
 // REMOVE ITEMS
-
-function removeItem(id){
+function removeItem(id) {
   let cart = JSON.parse(localStorage.getItem("newCart")) || [];
-  let res = cart.filter((item) => item.id !== id)
+  let res = cart.filter((item) => item.id !== id);
   localStorage.clear();
   localStorage.setItem("newCart", JSON.stringify(res));
   const productsInsideCart = document.querySelector("#cartCards");
   productsInsideCart.innerHTML = "";
   renderCartItems();
-  };
+}
+
+// REMOVE ALL ITEMS
+function removeAllItems() {
+  let cart = JSON.parse(localStorage.getItem("newCart")) || [];
+  localStorage.clear();
+  const productsInsideCart = document.querySelector("#cartCards");
+  productsInsideCart.innerHTML = "";
+  renderCartItems();
+}

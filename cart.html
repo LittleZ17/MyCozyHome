@@ -41,7 +41,13 @@
             <h3>Total:</h3>
             <h3 class="totalPrice" id="totalPriceId"></h3>
           </div>
-          <button class="buyBtn cancelCart">Cancel products</button>
+          <button
+            onclick="removeAllItems()"
+            id="refresh"
+            class="buyBtn cancelCart"
+          >
+            Cancel products
+          </button>
           <button class="buyBtn">Buy now</button>
         </div>
       </main>

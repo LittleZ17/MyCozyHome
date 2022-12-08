@@ -79,7 +79,7 @@
     width: 100%;
     justify-content: space-between;
 }
-.remove {
+#remove {
     padding-right: 2%;
     background-color: transparent;
 }

@@ -162,6 +162,7 @@ function renderSubtotal() {
     subTotalItem.innerHTML = `${subtotalPrice.toFixed(2)} €`;
   });
 }
+
 // CALCULATE TOTAL
 function renderTotal() {
   let cart = JSON.parse(localStorage.getItem("newCart")) || [];

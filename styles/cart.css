@@ -79,7 +79,7 @@
     width: 100%;
     justify-content: space-between;
 }
-.remove {
+#remove {
     padding-right: 2%;
     background-color: transparent;
 }
@@ -143,5 +143,15 @@
 
 
 @media only screen and (min-width: 992px) {
-    
+    .cartContainer{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 30%;
+    }
+    .payBox{
+        width: 50%;
+        margin: 10% 0;
+    }
 }

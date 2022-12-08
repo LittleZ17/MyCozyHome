@@ -50,7 +50,6 @@ header {
 }
 .container .listProducts {
   grid-area: main;
-  width: 100%;
 }
 .container .slogan {
   grid-area: slogan;
@@ -82,4 +81,3 @@ a {
     text-decoration: none;
   }
 }
-/* Recordar usar rem para los font-size ej: 36px == 3.6rem */

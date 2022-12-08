@@ -10,7 +10,7 @@
 .slogan p strong {
   font-weight: 900;
 }
-.products {
+#cards {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,6 @@
 .imgProduct {
   width: 100%;
   height: 100%;
-  object-fit: contain;
   display: flex;
   justify-content: center;
 }
@@ -29,7 +28,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.products .item {
+#cards .item {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -69,6 +68,7 @@
   width: 100%;
 }
 .infoProduct .row1 h5 {
+  width: 50%;
   font-size: 2.1rem;
   font-weight: 400;
   color: var(--color-black);
@@ -96,6 +96,18 @@
   color: var(--color-green);
 }
 
+@media only screen and (min-width: 768px){
+  .imgProduct img{
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .imgProduct img{
+    width: 100%;
+    height: 100%;
+  }
+}
 @media only screen and (min-width: 992px) {
   .listProducts {
     margin: 2% 0;
@@ -107,43 +119,34 @@
   .slogan p {
     font-size: 2.4rem;
   }
-  .products {
+
+  #cards{
     width: 100%;
     display: grid;
-    align-items: center;
-    justify-content: center;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 0 5%;
-  }
-  .imgProduct img {
-    width: 100%;
-  }
-  .infoProduct img {
-    width: 100%;
-  }
-  .infoProduct div {
-    margin-top: 0.5rem;
+    justify-items: center;
+    align-items: stretch;
   }
 
-  .infoProduct .row1 h5 {
+  .item{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .imgProduct{
+    width: 100%;
+  }
+  .imgProduct img{
+    width: 100%;
+    height: 100%;
+  }
+  .row2 .quantity{
+    width: 60%;
+  }
+
+  .infoProduct .row2 p {
     font-size: 1.8rem;
   }
-
-  .infoProduct .row2 input {
-    font-size: 2.1rem;
-    font-weight: 400;
-    margin: 0 6%;
-  }
-  .infoProduct .row2 p {
-    font-size: 2rem;
-  }
-
-  .infoProduct .quantity {
-    width: 100%;
-    align-self: baseline;
-  }
-  .quantity button {
-    width: 24%;
-  }
 }
+ 

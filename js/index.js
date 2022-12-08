@@ -11,10 +11,7 @@ if (path === "cart.html") {
   renderCartItems();
   renderSubtotal();
   renderTotal();
-  // removeItem();
 }
-
-// let cart = JSON.parse(localStorage.getItem("newCart")) || [];
 
 // HAMBURGER MENU
 function addMenuHamburger() {
